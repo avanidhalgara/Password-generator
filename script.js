@@ -22,9 +22,14 @@ function generatePassword(){
 
   // when user click generate button  prompt user what length you want to be your password. 
 
-  var passwordLength = prompt("What length you would line in your password. It should be 8 character and maximum 128")
+  var passwordLength = prompt("What length you would like in your password. It should be 8 character and maximum 128")
 
-//  Prompt user what character you want in lowercase a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z and store the result in variable.
+  //  use while loop if user enter wrong length
+ while(passwordLength <8 || passwordLength >=128)
+ {
+   alert("Incorect input. Please enter the length between 8 and 128")
+   var passwordLength =prompt("What length you would like in your password. It should be 8 character and maximum 128")
+   //  Prompt user what character you want in lowercase a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z and store the result in variable.
   var lowercaseChar = prompt("What lowercase character you want to be in your password, Select options: a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z")
 
   // Prompt user what character you want in uppercase A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z and store the result in variable.
@@ -48,6 +53,10 @@ function generatePassword(){
     result += final.charAt(Math.floor(Math.random() * charLength));
  }
   return result;
+ }
+
+
+
 }
 
 
